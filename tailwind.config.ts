@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        netflix: ["Montserrat", "sans-serif"], // Use Netflix-like font
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
