@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const projects = [
   {
@@ -38,7 +39,7 @@ const ProjectsSection = () => {
             whileHover={{ scale: 1.05 }}
             className="bg-gray-900 rounded-2xl overflow-hidden shadow-lg"
           >
-            <img
+            <Image
               src={project.image}
               alt={project.title}
               className="w-full h-48 object-cover"

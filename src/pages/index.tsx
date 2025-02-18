@@ -209,9 +209,10 @@ const PortfolioLanding = () => {
                 variants={fadeIn}
                 className="text-gray-300 mt-4 max-w-lg text-lg"
               >
-                I'm a passionate Full-Stack Developer skilled in JavaScript,
-                TypeScript, and backend development. My focus is on building
-                high-performance applications that solve real-world problems.
+                I&apos;m a passionate Full-Stack Developer skilled in
+                JavaScript, TypeScript, and backend development. My focus is on
+                building high-performance applications that solve real-world
+                problems.
               </motion.p>
             </section>
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const projects = [
   {
@@ -68,7 +69,7 @@ const ProjectsSection = () => {
             >
               {/* Image */}
               <div className="relative">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
                   className="w-full h-52 object-cover rounded-t-2xl"

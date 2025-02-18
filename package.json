@@ -8,9 +8,6 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "eslintConfig": {
-  "root": false
-},
   "dependencies": {
     "framer-motion": "^12.4.4",
     "lucide-react": "^0.475.0",

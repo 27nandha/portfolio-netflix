@@ -7,10 +7,6 @@ import {
 } from "react-icons/fa";
 
 // Animation Variants
-const fadeIn = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
 
 const About = () => {
   return (
@@ -49,7 +45,7 @@ const About = () => {
             transition={{ duration: 1, delay: 0.8 }}
             className="text-lg text-gray-300"
           >
-            Hi, I'm{" "}
+            Hi, I&apos;m{" "}
             <span className="text-red-600 font-semibold text-xl">
               Nandhakumar J
             </span>
