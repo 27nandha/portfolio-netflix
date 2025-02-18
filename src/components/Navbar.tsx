@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link"; // Import Next.js Link
@@ -6,18 +6,19 @@ import Link from "next/link"; // Import Next.js Link
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollingUp, setScrollingUp] = useState(true);
-  let lastScrollY = 0;
+  const lastScrollY = useRef(0); // ✅ Store last scroll position in useRef
 
   // Hide navbar on scroll down, show on scroll up
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
+      if (window.scrollY > lastScrollY.current) {
         setScrollingUp(false);
       } else {
         setScrollingUp(true);
       }
-      lastScrollY = window.scrollY;
+      lastScrollY.current = window.scrollY; // ✅ Update useRef value
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -94,8 +95,6 @@ const Navbar = () => {
                 <Link href={item.path}>{item.name}</Link>
               </motion.a>
             ))}
-
-            {/* Close Button */}
           </motion.div>
         )}
       </AnimatePresence>
