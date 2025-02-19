@@ -27,9 +27,10 @@ const PortfolioLanding = () => {
   useEffect(() => {
     setTimeout(() => setShowN(true), 1000); // "N" appears
     setTimeout(() => setShowFullName(true), 3000); // Full name appears
-    setTimeout(() => setShowPortfolio(true), 4500); // Portfolio appears
-    setTimeout(() => setShowPage(true), 6000); // Page content loads
+    setTimeout(() => setShowPortfolio(true), 4200); // Portfolio appears
+    setTimeout(() => setShowPage(true), 5500); // Page content loads
   }, []);
+  const [showGradient, setShowGradient] = useState(true);
 
   if (!showN) return null; // Blank screen initially
 
@@ -37,19 +38,37 @@ const PortfolioLanding = () => {
     <>
       {/* Animated Intro Section */}
       <div className="font-netflix flex flex-col items-center justify-center h-screen bg-black px-4">
+        {showGradient && (
+          <motion.div
+            initial={{ opacity: 0, x: "-100%" }}
+            animate={{ opacity: [0.2, 0.5, 0.2], x: ["-100%", "100%"] }}
+            transition={{
+              duration: 1.5,
+              ease: "easeInOut",
+              repeat: 2,
+            }}
+            exit={{ opacity: 0 }}
+            onAnimationComplete={() => setShowGradient(false)} // Hides after finishing
+            className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-red-900 to-transparent blur-lg opacity-30"
+          />
+        )}
+
+        {/* Animated "N" with Effects */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 2.5, rotate: 10 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="font-bold flex justify-center items-center text-[12vw] sm:text-8xl relative"
+          className="font-bold flex justify-center items-center text-[10vw] sm:text-8xl relative"
+          style={{ transformOrigin: "center" }} // Ensures it scales from center
         >
           {!showFullName ? (
             // Step 1: Animated "N"
             <motion.span
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1.3 }}
+              initial={{ opacity: 0, scale: 2.5, rotate: 10 }}
+              animate={{ opacity: 1, scale: 1.3, rotate: 0 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              className="text-red-600 drop-shadow-lg"
+              className="text-red-600 drop-shadow-[0_0_20px_rgba(255,0,0,0.8)]"
+              style={{ transformOrigin: "center" }} // Keeps it centered while scaling
             >
               N
             </motion.span>
@@ -71,7 +90,7 @@ const PortfolioLanding = () => {
                   initial="hidden"
                   animate="visible"
                   variants={nameVariants}
-                  className="text-white text-[12vw] sm:text-8xl drop-shadow-lg"
+                  className="text-white text-[10vw] sm:text-8xl drop-shadow-lg"
                 >
                   {char}
                 </motion.span>
