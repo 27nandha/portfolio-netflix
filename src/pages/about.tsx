@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
 import {
   FaEnvelope,
@@ -11,6 +12,7 @@ import {
 const About = () => {
   return (
     <div className="max-w-screen-sm w-full mx-auto px-2">
+      <Navbar />
       <div className="font-netflix relative min-h-screen flex flex-col items-center justify-center bg-black text-white px-6">
         {/* Animated Background */}
         <motion.div
