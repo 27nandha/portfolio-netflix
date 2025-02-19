@@ -37,7 +37,17 @@ const PortfolioLanding = () => {
           className="absolute w-[120vw] h-[120vh] bg-red-900 rounded-full blur-[200px]"
         />
 
-        {/* Animated "N" with Effects */}
+        {/* Step 1: "Welcome to" Animated Text */}
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 2.2 }}
+          className="text-2xl sm:text-3xl font-semibold text-gray-300 tracking-widest uppercase mb-4"
+        >
+          Welcome to
+        </motion.h2>
+
+        {/* Step 2: Animated "N" with Effects */}
         <motion.div
           initial={{ opacity: 0, scale: 2.5, rotate: 10 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -46,18 +56,18 @@ const PortfolioLanding = () => {
           style={{ transformOrigin: "center" }} // Ensures it scales from center
         >
           {!showFullName ? (
-            // Step 1: Animated "N"
+            // Step 3: Animated "N"
             <motion.span
               initial={{ opacity: 0, scale: 2.5, rotate: 10 }}
               animate={{ opacity: 1, scale: 1.3, rotate: 0 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              className="text-red-600  text-[clamp(11vw,11.5vw,9rem)] sm:text-8xl "
+              className="text-red-600 text-[clamp(11vw,11.5vw,9rem)] sm:text-8xl"
               style={{ transformOrigin: "center" }} // Keeps it centered while scaling
             >
               N
             </motion.span>
           ) : (
-            // Step 2: Transform "N" into "Nandhakumar"
+            // Step 4: Transform "N" into "Nandhakumar"
             <motion.div className="flex">
               <motion.span
                 initial={{ scale: 1 }}
@@ -83,7 +93,7 @@ const PortfolioLanding = () => {
           )}
         </motion.div>
 
-        {/* Step 3: "Portfolio" Appears After Name */}
+        {/* Step 5: "Portfolio" Appears After Name */}
         {showPortfolio && (
           <motion.div className="flex mt-4">
             {"PORTFOLIO".split("").map((char, i) => (
@@ -110,45 +120,83 @@ const PortfolioLanding = () => {
             {/* Welcome Section */}
             <section className="relative flex flex-col items-center justify-center text-center py-20 px-6 bg-black overflow-hidden">
               {/* Background Glow Effect */}
-              <div className="absolute w-[120vw] h-[100vh] bg-red-900 rounded-full blur-[700px] opacity-25"></div>
+              <div className="absolute w-[120vw] h-[100vh] bg-red-900 rounded-full blur-[700px] opacity-20"></div>
 
               {/* Heading */}
-              <motion.h1
-                initial={{ opacity: 0, y: -30 }}
+              <motion.h2
+                initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-                className="relative text-6xl sm:text-7xl p-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-700 drop-shadow-lg"
+                transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+                className="relative text-5xl sm:text-6xl font-bold text-red-500 drop-shadow-md"
               >
-                Welcome to My Portfolio
-              </motion.h1>
+                Let's Build Something Amazing!
+              </motion.h2>
 
-              {/* Subtitle */}
+              {/* Introduction Text */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, delay: 0.3 }}
+                transition={{ duration: 1.2, delay: 0.8 }}
                 className="relative text-lg sm:text-xl text-gray-300 mt-4 max-w-2xl leading-relaxed"
               >
-                Crafting{" "}
-                <span className="text-red-400 font-medium">scalable</span> and{" "}
+                I'm a{" "}
                 <span className="text-red-400 font-medium">
-                  high-performance
-                </span>{" "}
-                web applications with precision.
+                  Full-Stack Developer
+                </span>
+                who loves creating **scalable**, **high-performance** web
+                applications. From intuitive UI to robust backend systems, I
+                bring ideas to life!
               </motion.p>
 
-              {/* Resume Button */}
-              <motion.a
-                href="https://drive.google.com/file/d/1YRw4ya9wnuoZfqJ0Xoc1rNpb8m84a6a7/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                className="relative mt-6 inline-block bg-red-600 hover:bg-red-500 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all"
+              {/* Skills Showcase */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 1 }}
+                className="relative mt-8 flex flex-wrap justify-center gap-4"
               >
-                Download Resume
-              </motion.a>
+                {[
+                  "Next.js",
+                  "TypeScript",
+                  "Tailwind CSS",
+                  "MongoDB",
+                  "Node.js",
+                ].map((tech, index) => (
+                  <span
+                    key={index}
+                    className="bg-gray-800 text-gray-300 px-4 py-2 rounded-full text-sm font-semibold border border-gray-700 shadow-md"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </motion.div>
+
+              {/* Resume + Contact Buttons */}
+              <div className="relative mt-6 flex flex-wrap gap-6">
+                {/* Resume Button */}
+                <motion.a
+                  href="https://drive.google.com/file/d/1YRw4ya9wnuoZfqJ0Xoc1rNpb8m84a6a7/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-red-600 hover:bg-red-500 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all"
+                >
+                  Download Resume
+                </motion.a>
+
+                {/* Contact Me Button */}
+                <motion.a
+                  href="/contact" // Link to Contact Section
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all"
+                >
+                  Let's Connect
+                </motion.a>
+              </div>
             </section>
 
             {/* Projects Section */}
@@ -164,7 +212,7 @@ const PortfolioLanding = () => {
                 transition={{ duration: 1, ease: "easeOut" }}
                 className="relative text-5xl p-1 font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-700 drop-shadow-lg"
               >
-                Projects
+                Featured Projects
               </motion.h2>
 
               {/* Subtitle */}
@@ -175,12 +223,12 @@ const PortfolioLanding = () => {
                 transition={{ duration: 1.2, delay: 0.3 }}
                 className="relative text-gray-300 mt-4 text-lg max-w-xl text-center leading-relaxed"
               >
-                Here are some of my recent works that showcase my technical
-                expertise.
+                Here are some **standout projects** that highlight my expertise
+                in **web development, AI, and data visualization**.
               </motion.p>
 
-              {/* Project Cards */}
-              <div className="relative mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Featured Project Showcase */}
+              <div className="relative mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
                   {
                     title: "Staff Agreement System",
@@ -189,10 +237,6 @@ const PortfolioLanding = () => {
                   {
                     title: "SymptomSense: AI Diagnosis",
                     tech: "Python, Flask, SVC, Pandas",
-                  },
-                  {
-                    title: "Sales Insights Dashboard",
-                    tech: "Power BI, MySQL",
                   },
                 ].map((project, index) => (
                   <motion.div
@@ -214,6 +258,17 @@ const PortfolioLanding = () => {
                   </motion.div>
                 ))}
               </div>
+
+              {/* View More Projects Button */}
+              <motion.a
+                href="/projects" // Link to full projects page
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                className="relative mt-8 inline-block bg-red-600 hover:bg-red-500 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all"
+              >
+                View All Projects
+              </motion.a>
             </section>
 
             {/* About Section */}
