@@ -3,14 +3,6 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 
 // Name Reveal Animation
-const nameVariants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: 0.05 * i, duration: 0.3, ease: "easeOut" },
-  }),
-};
 
 // Scroll Fade-In Animation
 const fadeIn = {
