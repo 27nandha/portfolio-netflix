@@ -129,7 +129,7 @@ const PortfolioLanding = () => {
                 transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
                 className="relative text-5xl sm:text-6xl font-bold text-red-500 drop-shadow-md"
               >
-                Let's Build Something Amazing!
+                Let&apos;s Build Something Amazing!
               </motion.h2>
 
               {/* Introduction Text */}
@@ -139,7 +139,7 @@ const PortfolioLanding = () => {
                 transition={{ duration: 1.2, delay: 0.8 }}
                 className="relative text-lg sm:text-xl text-gray-300 mt-4 max-w-2xl leading-relaxed"
               >
-                I'm a{" "}
+                I&apos;m a{" "}
                 <span className="text-red-400 font-medium">
                   Full-Stack Developer
                 </span>
@@ -194,7 +194,7 @@ const PortfolioLanding = () => {
                   transition={{ duration: 0.3 }}
                   className="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all"
                 >
-                  Let's Connect
+                  Let&apos;s Connect
                 </motion.a>
               </div>
             </section>
