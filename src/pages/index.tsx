@@ -30,35 +30,27 @@ const PortfolioLanding = () => {
     setTimeout(() => setShowPortfolio(true), 4200); // Portfolio appears
     setTimeout(() => setShowPage(true), 5500); // Page content loads
   }, []);
-  const [showGradient, setShowGradient] = useState(true);
 
   if (!showN) return null; // Blank screen initially
 
   return (
     <>
       {/* Animated Intro Section */}
-      <div className="font-netflix flex flex-col items-center justify-center h-screen bg-black px-4">
-        {showGradient && (
-          <motion.div
-            initial={{ opacity: 0, x: "-100%" }}
-            animate={{ opacity: [0.2, 0.5, 0.2], x: ["-100%", "100%"] }}
-            transition={{
-              duration: 1.5,
-              ease: "easeInOut",
-              repeat: 2,
-            }}
-            exit={{ opacity: 0 }}
-            onAnimationComplete={() => setShowGradient(false)} // Hides after finishing
-            className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-red-900 to-transparent blur-lg opacity-30"
-          />
-        )}
+      <div className="font-netflix flex flex-col items-center justify-center min-h-screen bg-black px-4 relative overflow-hidden">
+        {/* Background Animated Glow */}
+        <motion.div
+          initial={{ opacity: 0.2 }}
+          animate={{ opacity: [0.2, 0.5, 0.2] }}
+          transition={{ duration: 3, repeat: 1, ease: "easeInOut" }}
+          className="absolute w-[120vw] h-[120vh] bg-red-900 rounded-full blur-[200px]"
+        />
 
         {/* Animated "N" with Effects */}
         <motion.div
           initial={{ opacity: 0, scale: 2.5, rotate: 10 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="font-bold flex justify-center items-center text-[10vw] sm:text-8xl relative"
+          className="font-bold flex justify-center items-center text-[clamp(9vw,12vw,7rem)] drop-shadow-lg sm:text-8xl relative"
           style={{ transformOrigin: "center" }} // Ensures it scales from center
         >
           {!showFullName ? (
@@ -67,7 +59,7 @@ const PortfolioLanding = () => {
               initial={{ opacity: 0, scale: 2.5, rotate: 10 }}
               animate={{ opacity: 1, scale: 1.3, rotate: 0 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              className="text-red-600 drop-shadow-[0_0_20px_rgba(255,0,0,0.8)]"
+              className="text-red-600  text-[clamp(9vw,12vw,7rem)] "
               style={{ transformOrigin: "center" }} // Keeps it centered while scaling
             >
               N
@@ -79,7 +71,7 @@ const PortfolioLanding = () => {
                 initial={{ scale: 1 }}
                 animate={{ scale: 1.3, x: -3 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="text-red-600"
+                className="text-red-600 text-[clamp(9vw,12vw,7rem)] sm:text-8xl drop-shadow-lg"
               >
                 N
               </motion.span>
@@ -87,10 +79,10 @@ const PortfolioLanding = () => {
                 <motion.span
                   key={i}
                   custom={i}
-                  initial="hidden"
-                  animate="visible"
-                  variants={nameVariants}
-                  className="text-white text-[10vw] sm:text-8xl drop-shadow-lg"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1, duration: 0.3 }}
+                  className="text-white text-[clamp(9vw,12vw,7rem)] sm:text-8xl drop-shadow-lg"
                 >
                   {char}
                 </motion.span>
@@ -106,10 +98,10 @@ const PortfolioLanding = () => {
               <motion.span
                 key={i}
                 custom={i}
-                initial="hidden"
-                animate="visible"
-                variants={nameVariants}
-                className="text-red-600 text-[2vw] text-lg sm:text-6xl drop-shadow-lg"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1, duration: 0.3 }}
+                className="text-red-600 text-[clamp(5vw,7vw,5rem)] sm:text-6xl drop-shadow-lg"
               >
                 {char}
               </motion.span>
@@ -217,7 +209,7 @@ const PortfolioLanding = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeIn}
-                className="text-5xl font-bold text-blue-400 drop-shadow-md"
+                className="text-5xl font-bold text-red-600 drop-shadow-md"
               >
                 About Me
               </motion.h2>
