@@ -31,11 +31,11 @@ const skills = [
   { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
   { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
   { name: "Java Script", icon: <FaJs className="text-yellow-300" /> },
-  { name: "React JS", icon: <FaReact className="text-blue-400" /> },
+  { name: "ReactJS", icon: <FaReact className="text-blue-400" /> },
   { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
-  { name: "Mongo DB", icon: <SiMongodb className="text-green-500" /> },
+  { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
   { name: "MySQL", icon: <SiMysql className="text-blue-500" /> },
-  { name: "Power BI", icon: <BsDatabase className="text-yellow-500" /> },
+  { name: "PowerBI", icon: <BsDatabase className="text-yellow-500" /> },
   { name: "Excel", icon: <FaDatabase className="text-green-400" /> },
   { name: "GitHub", icon: <FaGithub className="text-white" /> },
   { name: "VS Code", icon: <FaCode className="text-blue-400" /> },
@@ -65,7 +65,7 @@ export const Skills = () => {
         </h1>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-lg">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-sm sm:text-lg">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
