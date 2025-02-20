@@ -172,7 +172,7 @@ const PortfolioLanding = () => {
               </motion.div>
 
               {/* Resume + Contact Buttons */}
-              <div className="relative mt-6 flex flex-wrap gap-6">
+              <div className="relative mt-6 flex justify-center flex-wrap gap-7">
                 {/* Resume Button */}
                 <motion.a
                   href="https://drive.google.com/file/d/1YRw4ya9wnuoZfqJ0Xoc1rNpb8m84a6a7/view?usp=sharing"
@@ -200,7 +200,7 @@ const PortfolioLanding = () => {
             </section>
 
             {/* Projects Section */}
-            <section className="relative flex flex-col items-center justify-center min-h-screen px-6 bg-black overflow-hidden">
+            <section className="relative flex flex-col items-center justify-center py-10 sm:min-h-screen px-6 bg-black overflow-hidden">
               {/* Background Glow Effect */}
               <div className="absolute w-[120vw] h-[120vh] bg-red-900 rounded-full blur-[500px] opacity-30"></div>
 
@@ -210,7 +210,7 @@ const PortfolioLanding = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="relative text-5xl p-1 font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-700 drop-shadow-lg"
+                className="relative text-2xl sm:text-4xl p-1 font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-700 drop-shadow-lg"
               >
                 Featured Projects
               </motion.h2>
@@ -251,7 +251,7 @@ const PortfolioLanding = () => {
                     }}
                     className="relative p-6 bg-gray-900 bg-opacity-60 backdrop-blur-xl border border-gray-700 shadow-lg rounded-2xl hover:scale-105 hover:border-red-500 transition-all cursor-pointer"
                   >
-                    <h3 className="text-xl font-semibold text-white">
+                    <h3 className="sm:text-xl text-lg font-semibold text-white">
                       {project.title}
                     </h3>
                     <p className="text-gray-400 text-sm mt-2">{project.tech}</p>
@@ -272,13 +272,13 @@ const PortfolioLanding = () => {
             </section>
 
             {/* About Section */}
-            <section className="h-screen flex flex-col items-center justify-center bg-black text-center px-6">
+            <section className=" flex flex-col py-20 items-center justify-center bg-black text-center px-6">
               <motion.h2
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeIn}
-                className="text-5xl font-bold text-red-600 drop-shadow-md"
+                className="sm:text-5xl text-3xl font-bold text-red-600 drop-shadow-md"
               >
                 About Me
               </motion.h2>
@@ -287,7 +287,7 @@ const PortfolioLanding = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeIn}
-                className="text-gray-300 mt-4 max-w-lg text-lg"
+                className="text-gray-300 mt-4 max-w-lg text-md sm:text-lg"
               >
                 I&apos;m a passionate Full-Stack Developer skilled in
                 JavaScript, TypeScript, and backend development. My focus is on
