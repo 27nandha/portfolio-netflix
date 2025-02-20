@@ -120,7 +120,7 @@ const PortfolioLanding = () => {
             {/* Welcome Section */}
             <section className="relative flex flex-col items-center justify-center text-center py-20 px-6 bg-black overflow-hidden">
               {/* Background Glow Effect */}
-              <div className="absolute w-[120vw] h-[100vh] bg-red-900 rounded-full blur-[700px] opacity-20"></div>
+              <div className="absolute w-[120vw] h-[120vh] bg-red-900 rounded-full blur-[700px] opacity-20"></div>
 
               {/* Heading */}
               <motion.h2
@@ -202,7 +202,7 @@ const PortfolioLanding = () => {
             {/* Projects Section */}
             <section className="relative flex flex-col items-center justify-center py-10 sm:min-h-screen px-6 bg-black overflow-hidden">
               {/* Background Glow Effect */}
-              <div className="absolute w-[120vw] h-[120vh] bg-red-900 rounded-full blur-[500px] opacity-30"></div>
+              <div className="absolute w-[120vw] h-[90vh] bg-red-900 rounded-full blur-[500px] opacity-30"></div>
 
               {/* Heading */}
               <motion.h2
