@@ -175,7 +175,7 @@ const PortfolioLanding = () => {
               <div className="relative mt-6 flex justify-center flex-wrap gap-7">
                 {/* Resume Button */}
                 <motion.a
-                  href="https://drive.google.com/file/d/1YRw4ya9wnuoZfqJ0Xoc1rNpb8m84a6a7/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1kI7POMRcSLogCW8m1e40DJic_2ZqzzEK/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
