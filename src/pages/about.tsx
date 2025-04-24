@@ -94,7 +94,7 @@ const About = () => {
               <FaBriefcase className="text-green-400 text-2xl" />
               <span>
                 <span className="text-red-600 font-semibold">Experience:</span>
-                Full-Stack Developer @ Nexus International Alliance
+                Redback IT Solutions
               </span>
             </motion.p>
 
