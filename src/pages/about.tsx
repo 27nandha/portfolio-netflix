@@ -81,7 +81,7 @@ const About = () => {
             >
               <FaGraduationCap className="text-yellow-400 text-2xl" />
               <span>
-                <span className="text-red-600 font-semibold">Education:</span>{" "}
+                <span className="text-red-600 font-semibold">Education: </span>{" "}
                 MCA, SRM Institute of Science & Technology
               </span>
             </motion.p>
@@ -93,7 +93,7 @@ const About = () => {
             >
               <FaBriefcase className="text-green-400 text-2xl" />
               <span>
-                <span className="text-red-600 font-semibold">Experience:</span>
+                <span className="text-red-600 font-semibold">Experience: </span>
                 Redback IT Solutions
               </span>
             </motion.p>
@@ -105,7 +105,7 @@ const About = () => {
             >
               <FaEnvelope className="text-blue-400 text-2xl" />
               <span>
-                <span className="text-red-600 font-semibold">Email:</span>
+                <span className="text-red-600 font-semibold">Email: </span>
                 nandhakumar272002@gmail.com
               </span>
             </motion.p>
@@ -117,7 +117,7 @@ const About = () => {
             >
               <FaLinkedin className="text-blue-500 text-2xl" />
               <span>
-                <span className="text-red-600 font-semibold">LinkedIn:</span>{" "}
+                <span className="text-red-600 font-semibold">LinkedIn: </span>{" "}
                 <a
                   href="https://linkedin.com/in/nandhakumar27"
                   target="_blank"
