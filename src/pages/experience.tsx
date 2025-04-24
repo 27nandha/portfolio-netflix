@@ -16,21 +16,22 @@ const fadeUp = {
 // Experience Data
 const experiences = [
   {
-    company: "Nexus International Alliance Pvt Ltd",
-    role: "Part-Time Full-Stack Developer (Remote)",
-    period: "Jan 2025 – Present",
-    description:
-      "Designed, developed, and deployed full-stack web applications using Next.js, TypeScript, and the MERN stack.",
-    icon: <FaLaptopCode className="text-blue-400" />,
-  },
-  {
-    company: "Orinson Technologies",
-    role: "Full-Stack Developer Intern (Remote)",
-    period: "Dec 2024 – Jan 2025",
+    company: "RedBack IT Solutions",
+    role: "Web Developer Intern",
+    period: "Mar 2025 – Present",
     description:
       "Developed and deployed full-stack web applications using the MERN stack, enhancing efficiency and user experience.",
     icon: <MdWork className="text-yellow-400" />,
   },
+  {
+    company: "Nexus International Alliance Pvt Ltd",
+    role: "Part-Time Full-Stack Developer (Remote)",
+    period: "Jan 2025 – Mar 2025",
+    description:
+      "Designed, developed, and deployed full-stack web applications using Next.js, TypeScript, and the MERN stack.",
+    icon: <FaLaptopCode className="text-blue-400" />,
+  },
+  
 ];
 
 const Experience = () => {
